@@ -6,7 +6,12 @@ import {
 
 function FilterButtons({ onSetFilter, currentFilter }) {
     return (
-        <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        <ButtonGroup
+            variant="contained"
+            aria-label="outlined primary button group"
+            style={{ marginTop: '8px' }}
+        >
+
             <Button
                 onClick={() => onSetFilter('all')}
                 color={currentFilter === 'all' ? 'secondary' : 'primary'}
