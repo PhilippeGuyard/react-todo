@@ -21,7 +21,7 @@ function AddTodoForm({ onAddTodo }) {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                 />
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" color="primary" type="submit" aria-label='Add a new todo item'>
                     Add
                 </Button>
             </Box>

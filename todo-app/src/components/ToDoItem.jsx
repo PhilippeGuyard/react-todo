@@ -50,13 +50,11 @@ function ToDoItem({ todo, onToggle, onDelete }) {
             <Checkbox
                 edge="start"
                 checked={todo.completed}
-                tabIndex={-1}
-                disableRipple
                 onClick={handleToggle}
             />
             <ListItemText
                 primary={todo.title}
-                secondary={`Added on: ${formatDate(todo.dateAdded)}`}
+                secondary={`Added on: ${formatDate(todo.dateAdded)}${isItemOverdue ? ' - Overdue' : ''}`}
                 primaryTypographyProps={{ style: { fontSize: '1em' } }}
             />
         </ListItem>
