@@ -7,20 +7,25 @@ import {
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const isOverdue = (date) => {
+export const isOverdue = (date) => {
     const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of today
+
     const dueDate = new Date(date);
+    dueDate.setHours(0, 0, 0, 0); // Set to start of due date
+
     return dueDate < today;
 };
 
+export function formatDate(dateString) {
+    if (!dateString || isNaN(Date.parse(dateString))) {
+        return "Invalid Date";
+    }
 
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    const [year, month, day] = dateString.split('-');
+    return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
 }
+
 
 function ToDoItem({ todo, onToggle, onDelete }) {
     const handleToggle = () => {

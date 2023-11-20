@@ -13,7 +13,7 @@ function AddTodoForm({ onAddTodo }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} role="form">
             <Box display="flex" alignItems="center" gap={2}>
                 <TextField
                     label="Add New Todo"

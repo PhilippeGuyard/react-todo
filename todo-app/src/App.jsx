@@ -6,6 +6,10 @@ import MainArea from './components/MainArea';
 import Header from './components/Header';
 import { initialTodos } from './data/initialTodos';
 
+const getCurrentDateISO = () => {
+  return new Date().toISOString().split('T')[0];
+};
+
 function App() {
   const [todos, setTodos] = useState(initialTodos);
   const [filter, setFilter] = useState('all'); // 'all', 'completed', 'notCompleted'
@@ -14,7 +18,7 @@ function App() {
     const newTodo = {
       id: Date.now(),
       title,
-      dateAdded: new Date().toLocaleDateString("en-GB"), // Format date as DD/MM/YYYY
+      dateAdded: getCurrentDateISO(),
       completed: false
     };
     setTodos([...todos, newTodo]);
