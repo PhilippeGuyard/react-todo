@@ -20,14 +20,14 @@ function FilterButtons({ onSetFilter, currentFilter }) {
                 All
             </Button>
             <Button
-                aria-pressed={currentFilter === 'not completed todos'}
+                aria-pressed={currentFilter === 'notCompleted'}
                 onClick={() => onSetFilter('notCompleted')}
                 color={currentFilter === 'notCompleted' ? 'secondary' : 'primary'}
             >
                 Not Done
             </Button>
             <Button
-                aria-pressed={currentFilter === 'completed todos'}
+                aria-pressed={currentFilter === 'completed'}
                 onClick={() => onSetFilter('completed')}
                 color={currentFilter === 'completed' ? 'secondary' : 'primary'}
             >

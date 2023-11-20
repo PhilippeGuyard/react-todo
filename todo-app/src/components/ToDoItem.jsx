@@ -32,7 +32,6 @@ function ToDoItem({ todo, onToggle, onDelete }) {
     };
     // Check if the todo is overdue and not completed
     const isItemOverdue = !todo.completed && isOverdue(todo.dateAdded);
-    console.log(todo);
 
     return (
         <ListItem
